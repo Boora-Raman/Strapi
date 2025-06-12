@@ -1,2 +1,0 @@
-Loom-Explaination-For-Strapi-Using-Dockerfile
-https://drive.google.com/drive/folders/1wFLCr5DhAjUV1z5xgJUr33Cx7vr62kXv?usp=drive_link
