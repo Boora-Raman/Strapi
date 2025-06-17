@@ -47,7 +47,7 @@ systemctl start docker
 systemctl enable docker
 
 echo "Run test container"
-docker run -d -p 1337:1337 --name strapi-deployment booraraman/strapi-app:77abefcaa8c3bd31331824bcf09cace74ba0e9f6 
+docker run -d -p 1337:1337 --name strapi-deployment booraraman/strapi-app:5bf3b9ba064f6139f9910d803e5710312af095eb:77abefcaa8c3bd31331824bcf09cace74ba0e9f6 
 
 
    EOF
