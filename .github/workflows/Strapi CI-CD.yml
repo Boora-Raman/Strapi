@@ -68,7 +68,7 @@ jobs:
           path: image-repo.txt
 
   update-ecs-task:
-    name: Update ECS Task Definition & Push
+    name: Update Docker Image In Terraform Files
     runs-on: ubuntu-latest
     needs: build-and-push
 
