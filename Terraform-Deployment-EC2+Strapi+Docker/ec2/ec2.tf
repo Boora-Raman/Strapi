@@ -46,6 +46,10 @@ echo "Enable and start Docker service"
 systemctl start docker
 systemctl enable docker
 
+echo "Run test container"
+docker run -d -p 1337:1337 --name strapi-deployment booraraman/strapi-app 
+
+
    EOF
   tags = {
     Name = "strapi-ec2+docker+terraform"
