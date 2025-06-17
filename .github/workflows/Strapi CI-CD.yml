@@ -1,4 +1,4 @@
-name: Medusa CI/CD Pipeline
+name: Strapi CI/CD Pipeline
 
 on:
   push:
@@ -108,6 +108,6 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add Terraform-Deployment/ECS-Cluster/ecs-task-definition.tf
-          git commit -m "chore: update ECS task image to ${{ env.IMAGE_TAG }}"
+          git add Terraform-Deployment-EC2+Strapi+Docker/ec2/ec2.tf
+          git commit -m "Updated Docker image In Ec2 User Script to ${{ env.IMAGE_TAG }}"
           git push git@github.com:${{ github.repository }}.git HEAD:main
