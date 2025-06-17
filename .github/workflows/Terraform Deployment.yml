@@ -4,9 +4,7 @@ on:
   push:
     paths:
       - "Terraform-Deployment-EC2+Strapi+Docker/**" 
-    branches:
-      - main
-
+    
 permissions:
   contents: read
 
