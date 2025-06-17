@@ -2,6 +2,10 @@ name: Terraform Deploy Pipeline
 
 on:
   push:
+    paths:
+      - "Terraform-Deployment/**"
+    branches:
+      - master
 
 permissions:
   contents: read
