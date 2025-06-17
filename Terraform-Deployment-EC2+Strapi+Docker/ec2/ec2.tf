@@ -5,7 +5,7 @@ variable "security_group_id" {}
 resource "aws_instance" "strapi_ec2" {
   ami                         = "ami-0779caf41f9ba54f0" 
   instance_type               = "t2.small"
-  subnet_id                   = var.subnet_id
+  subnet_id                   = var.subnet_id  
   vpc_security_group_ids      = [var.security_group_id]
  
   associate_public_ip_address = true
