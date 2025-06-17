@@ -43,16 +43,9 @@ apt-get update -y
 apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 echo "Enable and start Docker service"
-systemctl enable docker
 systemctl start docker
+systemctl enable docker
 
-echo "Verify Docker installation"
-docker --version
-
-echo "Run test container"
-docker run -d -p 1337:1337 --name strapi-deployment booraraman/strapi-app 
-
-echo "✅ Docker installed and nginx container running on port 1337!"
    EOF
   tags = {
     Name = "strapi-ec2+docker+terraform"
