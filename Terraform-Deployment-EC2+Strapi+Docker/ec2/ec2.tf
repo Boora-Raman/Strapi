@@ -9,8 +9,6 @@ resource "aws_instance" "strapi_ec2" {
   vpc_security_group_ids      = [var.security_group_id]
  
   associate_public_ip_address = true
-  key_name = "ec2-key"
-
 
 
 
