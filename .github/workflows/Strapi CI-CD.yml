@@ -95,7 +95,7 @@ jobs:
 
       - name: Update Docker Image in ec2.tf
         run: |
-          FILE="Terraform-Deployment-EC2+Strapi+Docker/ec2/ec2.tf"
+          FILE="Terraform-Deployment/ec2/ec2.tf"
           sed -i "s|booraraman/strapi-app[^ \"']*|${IMAGE_REPO}:${IMAGE_TAG}|" "$FILE"
           echo "Updated docker image to ${{ env.IMAGE_REPO }}:${{ env.IMAGE_TAG }}"
 
@@ -108,6 +108,6 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add Terraform-Deployment-EC2+Strapi+Docker/ec2/ec2.tf
+          git add Terraform-Deployment/ec2/ec2.tf
           git commit -m "Updated Docker image In Ec2 User Script to ${{ env.IMAGE_TAG }}"
           git push git@github.com:${{ github.repository }}.git HEAD:master
