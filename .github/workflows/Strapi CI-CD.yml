@@ -110,4 +110,4 @@ jobs:
           git config user.email "github-actions@github.com"
           git add Terraform-Deployment-EC2+Strapi+Docker/ec2/ec2.tf
           git commit -m "Updated Docker image In Ec2 User Script to ${{ env.IMAGE_TAG }}"
-          git push git@github.com:${{ github.repository }}.git HEAD:main
+          git push git@github.com:${{ github.repository }}.git HEAD:master
