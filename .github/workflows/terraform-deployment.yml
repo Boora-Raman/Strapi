@@ -3,7 +3,7 @@ name: Terraform Deploy Pipeline
 on:
   push:
     paths:
-      - "Terraform-Deployment-EC2+Strapi+Docker/**" 
+      - "./Terraform-Deployment-EC2+Strapi+Docker/**" 
     
 permissions:
   contents: read
