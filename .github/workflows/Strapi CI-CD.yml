@@ -95,8 +95,8 @@ jobs:
 
       - name: Update Docker Image in ec2.tf
         run: |
-          FILE="Terraform-Deployment-EC2+Strapi+Docker/ec2/ec2.tf"
-          sed -i "s|booraraman/strapi-app|${IMAGE_REPO}:${IMAGE_TAG}|" "$FILE"
+          FILE="Strapi/Terraform-Deployment-EC2+Strapi+Docker/ec2/ec2.tf"
+          sed -i "s|booraraman/strapi-app[^ \"']*|${IMAGE_REPO}:${IMAGE_TAG}|" "$FILE"
           echo "Updated docker image to ${{ env.IMAGE_REPO }}:${{ env.IMAGE_TAG }}"
 
       - name: Set up SSH for Git Push
