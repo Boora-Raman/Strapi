@@ -2,7 +2,7 @@ name: Terraform Code For ECS Deplyment
 on:
   push:
     branches:
-      - main
+      - master
     paths:
         - "Terraform-ECS/**"
 env:
