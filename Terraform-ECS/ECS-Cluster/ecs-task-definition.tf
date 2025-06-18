@@ -8,7 +8,7 @@ resource "aws_ecs_task_definition" "TD" {
   container_definitions = jsonencode([
     {
       name  = "medusa"
-      image = "booraraman/strapi-app:d8c1479b8fc172b9d2969fbf364c5255c513fb33"
+      image = "booraraman/strapi-app:3809b3c0395e97cc11bd203269507019ab127f25"
       essential = true
       portMappings = [
         {
