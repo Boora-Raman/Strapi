@@ -95,7 +95,7 @@ jobs:
 
       - name: Update Docker Image in ec2.tf
         run: |
-          FILE="Terraform_Deployment_ECS/ECS-Cluster/ecs-task-definition.tf"
+          FILE="Terraform-ECS/ECS-Cluster/ecs-task-definition.tf"
           sed -i "11s|image = \".*\"|image = \"${{ env.IMAGE_REPO }}:${{ env.IMAGE_TAG }}\"|" "$FILE"
           echo "Updated ECS task image to ${{ env.IMAGE_REPO }}:${{ env.IMAGE_TAG }}"
 
@@ -108,6 +108,6 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add Terraform_Deployment_ECS/ECS-Cluster/ecs-task-definition.tf
+          git add Terraform-ECS/ECS-Cluster/ecs-task-definition.tf
           git commit -m "Updated Docker image In Ec2 User Script to ${{ env.IMAGE_TAG }}"
           git push git@github.com:${{ github.repository }}.git HEAD:master
