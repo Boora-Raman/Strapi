@@ -1,4 +1,4 @@
-provider "aws" {
+ provider "aws" {
   region = "us-east-1"
 }
 
@@ -7,7 +7,7 @@ module "Vpc-ubnets" {
 }   
  
 module "Iam_roles" {
-  source = "./IAM & Roles"
+  source = "./IAM & Roles" 
 }
 
 module "alb" {
