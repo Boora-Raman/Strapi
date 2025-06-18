@@ -1,5 +1,5 @@
 resource "aws_ecs_task_definition" "TD" {
-  family                   = "medusa-service"
+  family                   = "strapi-service"
   requires_compatibilities = ["FARGATE"]
   network_mode             = "awsvpc"
   cpu                      = "4096"
@@ -12,15 +12,15 @@ resource "aws_ecs_task_definition" "TD" {
       essential = true
       portMappings = [
         {
-          containerPort = 9000
-          hostPort      = 9000
+          containerPort = 1337
+          hostPort      = 1337
           protocol      = "tcp"
         }
       ]
       logConfiguration = {
         logDriver = "awslogs"
         options = {
-          "awslogs-group"         = "/ecs/medusa-service"
+          "awslogs-group"         = "/ecs/strapi-service"
           "awslogs-region"        = "us-east-1"
           "awslogs-stream-prefix" = "medusa"
           "awslogs-create-group"  = "true"
