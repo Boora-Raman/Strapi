@@ -1,5 +1,5 @@
 resource "aws_iam_role" "iam-role" {
-  name = "medusa_role"
+  name = "strapi_role"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"

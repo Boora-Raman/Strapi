@@ -1,5 +1,5 @@
 resource "aws_lb" "test" {
-  name               = "medusa-test-lb-tf"
+  name               = "strapi-test-lb-tf"
   internal           = false
   load_balancer_type = "application"
   security_groups    = var.security_group_id
@@ -11,16 +11,16 @@ resource "aws_lb" "test" {
 
 resource "aws_lb_target_group" "TG" {
   name        = "tf-example-lb-tg"
-  port        = 9000
+  port        = 1337
   protocol    = "HTTP"
   vpc_id      = var.vpc_id
   target_type = "ip"
   deregistration_delay = "300"
 
   health_check {
-    path                = "/health"  # Verify path
+    path                = "/"  # Verify path
     protocol            = "HTTP"
-    port = "9000"
+    port = "1337"
     interval            = 30
     timeout             = 5
     healthy_threshold   = 5
