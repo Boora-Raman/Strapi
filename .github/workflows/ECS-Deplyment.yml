@@ -1,0 +1,46 @@
+name: Terraform Code For ECS Deplyment 
+on:
+  push:
+    branches:
+      - main
+    paths:
+        - 'Terraform_Deployment_ECS/**'
+env:
+    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    AWS_REGION: ${{ secrets.AWS_REGION }}
+    
+
+jobs:
+    terraform-deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Setup Terraform
+              uses: hashicorp/setup-terraform@v3
+              with:
+                terraform_version: 1.8.4
+                cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+            
+            - name: Terraform Initialize
+              working-directory: ./Terraform_Deployment_ECS
+              run: terraform init
+
+            - name: Terraform code Format validation 
+              working-directory: ./Terraform_Deployment_ECS
+              run: terraform fmt -check
+              continue-on-error: true
+
+            - name: Terraform Code Validatation
+              working-directory: ./Terraform_Deployment_ECS
+              run: terraform validate
+
+            - name: Terraform Plan Status 
+              working-directory: ./Terraform_Deployment_ECS
+              run: terraform plan
+
+            - name: Apply Terraform changes
+              working-directory: Deployment_infra
+              run: terraform apply -auto-approve
