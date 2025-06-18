@@ -4,7 +4,7 @@ terraform {
     organization = "Raman-Boora" 
 
     workspaces { 
-      name = "Strapi-Deployment-ECS"  
+      name = "Strapi-Deployment-ECS-workspace" 
     } 
   } 
 }
