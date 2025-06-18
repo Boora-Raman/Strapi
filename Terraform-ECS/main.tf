@@ -4,7 +4,7 @@ provider "aws" {
 
 module "Vpc-ubnets" {
   source = "./VPC & SG" 
-}  
+}   
  
 module "Iam_roles" {
   source = "./IAM & Roles"
