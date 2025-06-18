@@ -7,8 +7,8 @@ resource "aws_ecs_task_definition" "TD" {
   execution_role_arn       = var.execution_role_arn
   container_definitions = jsonencode([
     {
-      name  = "medusa"
-      image = "booraraman/strapi-app:3809b3c0395e97cc11bd203269507019ab127f25"
+      name  = "strapi"
+      image = "booraraman/strapi-app:c09c0d1bf738e3ba057393d41f1fc0c28593b4b1"
       essential = true
       portMappings = [
         {
@@ -22,7 +22,7 @@ resource "aws_ecs_task_definition" "TD" {
         options = {
           "awslogs-group"         = "/ecs/strapi-service"
           "awslogs-region"        = "us-east-1"
-          "awslogs-stream-prefix" = "medusa"
+          "awslogs-stream-prefix" = "strapi"
           "awslogs-create-group"  = "true"
         }
       }
