@@ -6,6 +6,6 @@
     workspaces {     
       name = "Strapi-Deployment-ECS-workspace" 
     } 
-  } 
+  }  
 }
  
