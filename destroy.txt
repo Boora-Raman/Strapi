@@ -1,6 +1,3 @@
   
  
-For infra removal/destruction just edit this  
- 
- 
-  
+For infra removal/destruction just edit this
