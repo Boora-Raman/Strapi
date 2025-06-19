@@ -1,4 +1,4 @@
-resource "aws_ecs_cluster" "strapi-cluster" {
+resource "aws_ecs_cluster" "medusa-cluster" {
   name = "strapi-deployment-cluster"
 
   setting {
