@@ -3,7 +3,7 @@
     
     organization = "Raman-Boora" 
 
-    workspaces {    
+    workspaces {     
       name = "Strapi-Deployment-ECS-workspace" 
     } 
   } 
