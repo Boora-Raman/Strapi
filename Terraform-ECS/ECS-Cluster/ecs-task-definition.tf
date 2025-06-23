@@ -20,7 +20,7 @@ resource "aws_ecs_task_definition" "TD" {
       logConfiguration = {
         logDriver = "awslogs"
         options = {
-          "awslogs-group"         = "/ecs/strapi-service-logs"
+          "awslogs-group"         = "/ecs/strapi-service"
           "awslogs-region"        = "us-east-1"
           "awslogs-stream-prefix" = "strapi"
           "awslogs-create-group"  = "true"
@@ -33,3 +33,4 @@ resource "aws_ecs_task_definition" "TD" {
     create_before_destroy = true
   }
 }
+
