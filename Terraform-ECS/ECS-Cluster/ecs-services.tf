@@ -3,10 +3,7 @@ resource "aws_ecs_service" "medusa-cluster-service" {
   cluster         = aws_ecs_cluster.medusa-cluster.id
   task_definition = aws_ecs_task_definition.TD.arn
   desired_count   = 2 
-  capacity_provider_strategy {
-    capacity_provider = "FARGATE_SPOT"
-    weight            = 1
-  }
+  launch_type = ["FARGATE"]
 
   network_configuration {
     subnets          = var.subnet_ids

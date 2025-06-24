@@ -21,7 +21,7 @@ resource "aws_ecs_task_definition" "TD" {
         logDriver = "awslogs"
         options = {
           "awslogs-group"         = "/ecs/strapi-service"
-          "awslogs-region"        = "us-east-1"
+          "awslogs-region"        = "us-east-2"
           "awslogs-stream-prefix" = "strapi"
           "awslogs-create-group"  = "true"
         }
