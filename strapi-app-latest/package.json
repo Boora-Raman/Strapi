@@ -1,24 +1,27 @@
 {
-  "name": "strapi-app-latest",
+  "name": "my-strapi-project",
   "version": "0.1.0",
   "private": true,
   "description": "A Strapi application",
-  "scripts": { 
+  "scripts": {
     "build": "strapi build",
     "console": "strapi console",
     "deploy": "strapi deploy",
     "dev": "strapi develop",
     "develop": "strapi develop",
+    "seed:example": "node ./scripts/seed.js",
     "start": "strapi start",
     "strapi": "strapi",
     "upgrade": "npx @strapi/upgrade latest",
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "5.15.1",
-    "@strapi/plugin-users-permissions": "5.15.1",
-    "@strapi/strapi": "5.15.1",
+    "@strapi/plugin-cloud": "5.16.0",
+    "@strapi/plugin-users-permissions": "5.16.0",
+    "@strapi/strapi": "5.16.0",
     "better-sqlite3": "11.3.0",
+    "fs-extra": "^10.0.0",
+    "mime-types": "^2.1.27",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
@@ -35,7 +38,7 @@
     "npm": ">=6.0.0"
   },
   "strapi": {
-    "uuid": "f5d22bdd-7c93-4137-b9f7-9c8c978059da",
-    "installId": "83a519c35bf1562f44776ffbbe6022ad32938e04d4f1054d8d5f1f5c0d11fd8d"
+    "uuid": "95c107ea-4ca8-425f-a797-a6e27a00c2b5",
+    "installId": "72907677677f02c149bdd1aa940f1899ff19bc95b898540c14d2db9f674c9c46"
   }
 }
