@@ -3,7 +3,7 @@ name: Strapi CI/CD Pipeline For ECS Task Updation File
 on:
   push:
     paths:
-      - "strapi-app-latest/**"
+      - "strapi-app/**"
 
 env:
   IMAGE_NAME: booraraman/strapi-app
@@ -25,11 +25,11 @@ jobs:
           node-version: 22
 
       - name: Install Dependencies
-        working-directory: ./strapi-app-latest
+        working-directory: ./strapi-app
         run: npm install
 
       - name: Run Syntax Check
-        working-directory: ./strapi-app-latest
+        working-directory: ./strapi-app
         run: |
           echo "Syntax check passed (Add lint/test if needed)"
           # npm run lint or npm run test
@@ -42,7 +42,7 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t $IMAGE_NAME:${{ env.IMAGE_TAG }} ./strapi-app-latest
+          docker build -t $IMAGE_NAME:${{ env.IMAGE_TAG }} ./strapi-app
           echo "Built Docker image: $IMAGE_NAME:${{ env.IMAGE_TAG }}"
 
       - name: Push Docker Image
