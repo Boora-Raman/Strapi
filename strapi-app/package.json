@@ -1,5 +1,5 @@
 {
-  "name": "my-strapi-project",
+  "name": "strapi-app",
   "version": "0.1.0",
   "private": true,
   "description": "A Strapi application",
@@ -16,9 +16,9 @@
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "5.16.0",
-    "@strapi/plugin-users-permissions": "5.16.0",
-    "@strapi/strapi": "5.16.0",
+    "@strapi/plugin-cloud": "5.16.1",
+    "@strapi/plugin-users-permissions": "5.16.1",
+    "@strapi/strapi": "5.16.1",
     "better-sqlite3": "11.3.0",
     "fs-extra": "^10.0.0",
     "mime-types": "^2.1.27",
@@ -38,7 +38,7 @@
     "npm": ">=6.0.0"
   },
   "strapi": {
-    "uuid": "95c107ea-4ca8-425f-a797-a6e27a00c2b5",
-    "installId": "72907677677f02c149bdd1aa940f1899ff19bc95b898540c14d2db9f674c9c46"
+    "uuid": "d5234013-80d7-42c5-bbca-f1e69a7c4d1b",
+    "installId": "ed435b98e99b51e8ba29a2d6cc04249c2d44a32d481516aac9f3a74f274c3bc6"
   }
 }
