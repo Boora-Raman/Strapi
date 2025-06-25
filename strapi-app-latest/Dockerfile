@@ -1,20 +1,13 @@
-FROM node:20-alpine
+FROM node:22-bullseye-slim
 
-WORKDIR /opt/
+WORKDIR /app
 
-# Copy all files
 COPY . .
 
-# Install node-gyp globally and dependencies
-RUN npm install -g node-gyp \
-    && npm config set fetch-retry-maxtimeout 600000 -g \
-    && npm install
+RUN npm install  
 
-# Build the admin panel
-RUN npm run build
+RUN npm run build 
 
-# Expose port
-EXPOSE 1337
+EXPOSE 1337 
 
-# ✅ Use production start script
 CMD ["npm", "run", "start"]
