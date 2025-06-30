@@ -9,8 +9,16 @@ resource "aws_lb" "test" {
   }
 }
 
+variable "lb_target_group_name" { default = "strapi-ecs-tg" }
+
+locals {
+  target_groups = ["blue", "green"]
+}
+
 resource "aws_lb_target_group" "TG" {
-  name        = "tf-example-lb-tg"
+  
+   count       = length(local.target_groups)
+  name        = "${var.lb_target_group_name}-${local.target_groups[count.index]}"
   port        = 1337
   protocol    = "HTTP"
   vpc_id      = var.vpc_id
@@ -21,10 +29,10 @@ resource "aws_lb_target_group" "TG" {
     path                = "/admin"  # Verify path
     protocol            = "HTTP"
     port = "1337"
-    interval            = 30
-    timeout             = 5
-    healthy_threshold   = 5
-    unhealthy_threshold = 2
+    timeout             = 110
+    interval            = 115
+    healthy_threshold   = 2
+    unhealthy_threshold = 5
   }
 }
 
@@ -35,7 +43,8 @@ resource "aws_lb_listener" "Listener" {
 
   default_action {
     type             = "forward"
-    target_group_arn = aws_lb_target_group.TG.arn
+    target_group_arn = aws_lb_target_group.TG[0].arn
+    # target_group_arn = aws_lb_target_group.TG.arn
   }
 }
 
