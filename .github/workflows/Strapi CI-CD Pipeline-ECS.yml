@@ -62,7 +62,7 @@ jobs:
 
       - name: Run Docker Container
         run: |
-          docker run -d -p 1337:1337 booraraman/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+          docker run -d -p 1337:1337 ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
 
       - name: Run OWASP ZAP Full Scan
         uses: zaproxy/action-full-scan@v0.10.0
