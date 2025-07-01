@@ -46,11 +46,20 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+  
+      
 
+      
       - name: Build Docker Image
         run: |
           docker build -t $IMAGE_NAME:${{ env.IMAGE_TAG }} ./strapi-app
           echo "Built Docker image: $IMAGE_NAME:${{ env.IMAGE_TAG }}"
+      
+      - name: Trivy Vulnerability Scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+
 
       - name: Push Docker Image
         run: |
