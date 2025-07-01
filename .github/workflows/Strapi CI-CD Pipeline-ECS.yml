@@ -16,9 +16,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      - name: SonarQube Scan   
         uses: actions/checkout@v4
-
+        with:  
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
@@ -27,6 +29,11 @@ jobs:
       - name: Install Dependencies
         working-directory: ./strapi-app
         run: npm install
+      
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v5
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name: Run Syntax Check
         working-directory: ./strapi-app
