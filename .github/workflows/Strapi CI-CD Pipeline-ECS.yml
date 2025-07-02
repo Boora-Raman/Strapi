@@ -1,10 +1,5 @@
 name: Strapi CI/CD Pipeline For ECS Task Updation File
 
-on:
-  push:
-    paths:
-      - "strapi-app/**"
-
 env:
   IMAGE_NAME: booraraman/strapi-app
   IMAGE_TAG: ${{ github.sha }}
