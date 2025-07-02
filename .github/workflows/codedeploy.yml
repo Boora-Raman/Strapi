@@ -3,7 +3,7 @@ name: docker-build-push-codedeploy
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - 'strapi-app/**'
 
