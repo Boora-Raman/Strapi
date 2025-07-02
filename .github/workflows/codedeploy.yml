@@ -8,7 +8,7 @@ on:
       - 'strapi-app/**'
 
 env:
-  AWS_REGION: ${{ secrets.AWS_REGION }}
+  AWS_REGION: us-east-2
   IMAGE_TAG: ${{ github.sha }}
   ECR_REPO_NAME: strapi-artifacts
   S3_BUCKET: strapi-codedeploy-bucket752
